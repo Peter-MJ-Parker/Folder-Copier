@@ -2,8 +2,8 @@ const chokidar = require('chokidar');
 const fs = require('fs-extra');
 const path = require('path');
 
-const folderToMonitor = `C:\\Users\\georg\\OneDrive\\Desktop\\monitor`;
-const externalHardDriveFolder = 'D:\\Test';
+const folderToMonitor = `path\\to\\folder-to-monitor`;
+const externalHardDriveFolder = 'path\\to\\copied-folder';
 
 const watcher = chokidar.watch(folderToMonitor, {
 	// ignored: /(^|[\/\\])\../, // ignore dotfiles
@@ -18,7 +18,7 @@ watcher.on('all', (event, filePath) => {
 	const relativePath = path.relative(folderToMonitor, filePath);
 	const destinationPath = path.join(externalHardDriveFolder, relativePath);
 
-	fs.copy(filePath, destinationPath, (error) => {
+	fs.copy(filePath, destinationPath, () => {
 		return console.log(`Copied ${filePath} to ${destinationPath}`);
 	});
 });
