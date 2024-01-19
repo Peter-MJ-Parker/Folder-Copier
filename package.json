@@ -1,0 +1,21 @@
+{
+	"name": "folder-copier",
+	"version": "1.0.0",
+	"description": "Detects changes in a project and copies everything to another folder.",
+	"main": "index.js",
+	"scripts": {
+		"test": "node .",
+		"dev": "nodemon ."
+	},
+	"keywords": [],
+	"author": "Peter-MJ-Parker",
+	"license": "ISC",
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/Peter-MJ-Parker/folder-copier.git"
+	},
+	"dependencies": {
+		"chokidar": "^3.5.3",
+		"fs-extra": "^11.2.0"
+	}
+}
